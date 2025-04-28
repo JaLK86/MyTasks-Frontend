@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/jpg" href="../assets/images/logo.png">
+    <title>Dashboard</title>
+</head>
+<body>
+<nav>
+    <div class="navigation-wrapper">
+        <div class="navigation-wrapper-left">
+            <img class="logo" src="../assets/images/logo.png">
+            <h1 class="teaser-main">MyTasks</h1>
+            <form action="/search" method="get" class="search-form">
+                <input type="text" name="q" placeholder="Suchbegriff eingeben">
+                <button type="submit"><img src="../assets/images/lupe_nav.png" alt=""></button>
+            </form>
+        </div>
+        <div class="navigation-wrapper-right">
+            <ul class="nav-list">
+                <li class="nav-list-element" id="aktuelles" onclick="return toDo()">Aufgaben</li>
+            </ul>
+            <ul class="nav-list">
+                <li class="nav-list-element" id="listen">Listen<a href=""></a></li>
+            </ul>
+            <ul class="nav-list">
+                <li class="nav-list-element" id="galerie">Galerie<a href=""></a></li>
+            </ul>
+            <ul class="nav-list">
+                <li class="nav-list-element" id="profil">Profil<a href=""></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="content-wrapper">
+    <div class="content-wrapper-sitebar">
+        <section class="menu">
+
+        </section>
+    </div>
+    <div class="content-wrapper-main">
+        <section class="main-section">
+            <div class="main-top">
+                <h2 class="teaser-secondary">Willkommen im Dashboard!</h2>
+            </div>
+            <div class="main-body">
+                
+            </div>
+        </section>
+    </div>
+    <div class="content-wrapper-sitebar">
+    </div>
+</div>
+
+<script src="./dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" type="image/jpg" href="./assets/images/logo.png">
+    <title>MyTasks</title>
+</head>
+<body>
+    <div class="login-wrapper">
+        <form class="formlogin" onsubmit="return logIn()">
+            <h1 class="login">My Tasks</h1>
+            <input class="placeholder" id="username" type="text" placeholder="username">
+            <input class="placeholder" id="password" type="password" placeholder="password">
+            <button class="btn btn-primary" type="submit">Anmelden</button>
+            <a class="login-options-secondary">oder</a>
+            <a class="login-options" onclick="return registry()">Registrieren</a>
+        </form>
+    </div>
+    <script src="./main.js"></script>
+</body>
+</html>

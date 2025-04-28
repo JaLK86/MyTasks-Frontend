@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" type="image/jpg" href="../assets/images/logo.png">
+    <title>Listen</title>
+</head>
+<body>
+    <nav>
+        <div class="navigation-wrapper">
+            <div class="navigation-wrapper-left">
+                <img class="logo" src="../assets/images/logo.png"><a href="../dashboard/dashboard.html"></a>
+                <h1 class="teaser-main">MyTasks</h1>
+                <form action="/search" method="get" class="search-form">
+                    <input type="text" name="q" placeholder="Suchbegriff eingeben">
+                    <button type="submit"><img src="../assets/images/lupe_nav.png" alt=""></button>
+                </form>
+            </div>
+            <div class="navigation-wrapper-right">
+                <ul class="nav-list">
+                    <li class="nav-list-element" id="aktuelles" onclick="return toDo()">Aufgaben</li>
+                </ul>
+                <ul class="nav-list">
+                    <li class="nav-list-element" id="listen" onclick="return showLists()">Listen</li>
+                </ul>
+                <ul class="nav-list">
+                    <li class="nav-list-element" id="galerie">Galerie<a href=""></a></li>
+                </ul>
+                <ul class="nav-list">
+                    <li class="nav-list-element" id="profil">Profil<a href=""></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="content-wrapper">
+        <div class="content-wrapper-sitebar">
+            <section class="menu">
+                <ul class="sidebar-menu-left">
+                    <li class="sidebar-list-element" id="toggle-lists-btn">
+                        <span id="arrow-icon" class="arrow">&#9662;</span>
+                        <span>Meine Listen</span> 
+                        <ul class="sidebar-list-element-child hidden" id="tasklist-container"></ul>
+                    </li>
+                    <li class="sidebar-list-element" id="new-list">+ Liste erstellen</li>
+                    <li class="sidebar-list-element" id="add-task-btn">+ Aufgabe erstellen</li>
+                </ul>
+            </section>
+        </div>
+        <div class="content-wrapper-main">
+            <section class="main-section">
+                <div class="main-top">
+                    <h2 id="list-title"class="teaser-secondary">Liste</h2>
+                </div>
+                <div class="main-body">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="check-col"><input type="checkbox" id="select-all"></th>
+                                <th class="col_1">Beschreibung</th>
+                                <th class="col_2">Status</th>
+                                <th class="col_3">Fällig am</th>
+                                <th class="col_4">Aktion</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-body">
+    
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+        <div class="content-wrapper-sitebar">
+        </div>
+    </div>
+    <div id="list-popup" class="hidden popup">
+        <div class="popup-content">
+            <h3>Neue Liste erstellen</h3>
+            <label class="edit-label" for="list-name">Name der Liste:</label>
+            <input type="text" id="list-name" class="edit-description" />
+            <div class="popup-buttons">
+                <button id="save-list-btn" class="popup-button">Speichern</button>
+                <button id="cancel-list-btn" class="popup-button">Abbrechen</button>
+            </div>
+        </div>
+    </div>
+    <div id="edit-popup" class="popup hidden">
+        <div class="popup-content">
+            <h3>Aufgabe bearbeiten</h3>
+            <label class="edit-label">Beschreibung:</label>
+                <input type="text" id="edit-description" class="edit-description"/>
+
+                <label class="edit-label">Fällig am:</label>
+                <input type="datetime-local" id="edit-dueOn" class="edit-dueOn"/>
+
+                <div class="popup-buttons">
+                    <button id="cancel-edit-btn" class="popup-button">Abbrechen</button>
+                    <button id="save-edit-btn" class="popup-button">Speichern</button>
+                </div>
+        </div>
+    </div>
+    <div id="add-popup" class="hidden popup">
+        <div class="popup-content">
+            <h3>Neue Aufgabe erstellen</h3>
+            <label class="edit-label" for="new-description">Beschreibung</label>
+            <input type="text" id="new-description" class="edit-description" />
+
+            <label class="edit-label" for="new-dueOn">Fällig am:</label>
+            <input type="datetime-local" id="new-dueOn" class="edit-dueOn"/>
+
+            <div class="popup-buttons">
+                <button id="save-new-btn" class="popup-button">Speichern</button>
+                <button id="cancel-new-btn" class="popup-button">Abbrechen</button>
+            </div>
+        </div>
+    </div>
+    <script src="toDo.js" defer></script>
+    <script src="tasklist.js" defer></script>
+    <script src="../dashboard/dashboard.js"></script>
+</body>
+</html>

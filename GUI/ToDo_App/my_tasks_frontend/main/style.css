@@ -1,0 +1,463 @@
+/* ##########   normalize   ########## */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.hidden {
+    display: none;
+}
+
+
+/* ##########   fonts   ########### */
+@font-face {
+    font-family: 'ubuntu-regular';
+    src: url('/main/assets/fonts/Ubuntu/Ubuntu/Ubuntu-Regular.ttf');
+}
+
+
+
+/* ##########   LogIn   ########## */
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: whitesmoke;
+}
+
+.formlogin {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    width: 300px;
+    height: 500px;
+    background-color: #2d0a6e;
+    border-radius: 3rem;
+    border:3px solid #c2c7ff;
+}
+
+.login {
+    font-family: "ubuntu-regular";
+    color: #c2c7ff;
+}
+
+.placeholder {
+    text-align: center;
+    font-family: "ubuntu-regular";
+    height: 30px;
+    border-radius: 3rem;
+    border:3px solid #c2c7ff;
+    background-color: whitesmoke;
+}
+
+.login-options{
+    font-family: "ubuntu-regular";
+    color: #c2c7ff;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    font-size: 16px;
+}
+
+.login-options:hover {
+    color: white;
+}
+
+.login-options-secondary{
+    font-family: "ubuntu-regular";
+    color: #c2c7ff;
+    font-size: 12px;
+    margin-bottom: -2.5rem;
+}
+
+
+
+/* ##########   Buttons   ########## */
+.btn.btn-primary{
+    text-align: center;
+    font-family: "ubuntu-regular";
+    font-weight: 800;
+    height: 30px;
+    width: 100px;
+    border-radius: 3rem;
+    border:1.5px solid whitesmoke;
+    cursor: pointer;
+    color: #2d0a6e;
+    transition: 0.2s ease-in-out;
+}
+
+.btn-primary:hover {
+    background-color: white;
+}
+
+
+
+/* ##########   Navigation   ########## */
+.navigation-wrapper{
+    display: flex;
+    width: 100%;
+    height: 90px;
+}
+
+.navigation-wrapper-left{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 50%;
+    height: 90px;
+    background-color: #2d0a6e;
+    border-bottom: 3px solid #c2c7ff;
+}
+
+.logo{
+    margin: 1.3rem -2.5rem 0rem 3rem;
+    width: 40px;
+    cursor: pointer;
+}
+
+.teaser-main{
+    font-family: "ubuntu-regular";
+    font-size: 40px;
+    color: #c2c7ff;
+    letter-spacing: 1.5px;
+    margin-left: 3rem;
+}
+
+.navigation-wrapper-right{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 50%;
+    height: 90px;
+    background-color: #2d0a6e;
+    border-bottom: 3px solid #c2c7ff;
+}
+
+.nav-list{
+    font-family: "ubuntu-regular";
+    color: #c2c7ff;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    list-style: none;
+}
+
+.nav-list:last-child{
+    margin-right: 3rem;
+}
+
+.nav-list-element{
+    margin-top: 1.5rem;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.nav-list-element:hover{
+    color: white;
+}
+
+
+/* ##########   Suchleiste   ########## */ 
+nav form.search-form{
+    margin-left: 5rem;
+    display: flex;
+    gap: 5px;    
+}
+
+nav input[type="text"] {
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+nav button {
+    height: 30px;
+    padding: 5px 10px;
+    background-color: #c2c7ff;
+    border: 0 3 5px solid #2d0a6e;
+    color: #2d0a6e;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+/*   ##########   Content   #########   */
+.content-wrapper{
+    display: flex;
+    width: 100%;
+    height: 150vh;
+    background-color: whitesmoke;
+} 
+
+.content-wrapper-sitebar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 1rem 0rem 1rem;
+    width: 250px;
+    height: 85vh;
+}
+
+.menu{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 225px;
+    height: 585px;
+}
+
+.content-wrapper-main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: 85vh;
+    margin: 1rem 1rem 0rem 1rem;
+}
+
+.main-section{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 95%;
+    height: 80vh;
+}
+
+.teaser-secondary{
+    font-family: "ubuntu-regular";
+    font-size: 28px;
+    font-weight: 900;
+    color: #2d0a6e;
+}
+
+.main-top{
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    height: 7vh;
+}
+
+.main-body{
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    height: 73vh;
+}
+
+
+
+/* ##########   Tabellen   ########## */
+thead{
+    font-family: "ubuntu-regular";
+    background-color: #2d0a6e;
+    color: #c2c7ff;
+    font-size: 20px;
+}
+
+th{
+    font-family: "ubuntu-regular";
+    text-align: center;
+    font-size: 18px;
+    line-height: 30px;
+}
+
+.check-col{
+    width: 3rem;
+}
+
+.col_1{
+    width: 40rem;
+}
+
+.col_2{
+    width: 25rem;
+}
+
+.col_3{
+    width: 30rem;
+}
+
+.col_4{
+    width: 15rem;
+}
+
+td{
+    font-family: "ubuntu-regular";
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    vertical-align: middle;
+    color: #2d0a6e;
+}
+
+tr.done td{
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.edit-btn{
+    background-color: #2d0a6e;
+    color: #c2c7ff;
+    border: none;
+    margin: 0.6rem;
+    padding: 0.3rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+
+.delete-btn{
+    background-color: #c2c7ff;
+    color: #c2c7ff;
+    border: none;
+    padding: 0.3rem;
+    margin: 0.6rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+
+.edit-icon{
+    width: 20px;
+    height: 18px;
+}
+
+.delete-icon{
+    width: 20px;
+    height: 18px;
+}
+
+.col_1_list {
+    width: 60rem;
+}
+
+
+/* ##########   Sidebar   ########## */
+ul li{
+    margin-bottom: 1.5rem;
+}
+
+.sidebar-list-element{
+    font-family: "ubuntu-regular";
+    color: #2d0a6e;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    list-style: none;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.sidebar-list-element:first-child {
+    margin-left: -0.75rem;
+    font-size: 16px;
+}
+
+.sidebar-list-element:hover{
+    color: #c2c7ff;
+}
+
+.sidebar-list-element-child{
+    font-family: "ubuntu-regular";
+    letter-spacing: -0.4px;
+    color: #2d0a6e;
+    font-size: 12px;
+    font-weight: 500;
+    list-style-type: disc;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.sidebar-list-element-child:hover{
+    color: #c2c7ff;
+    font-size: 12.2px;
+}
+
+
+/* ##########   Pfeil zum Ausklappen   ######### */
+.arrow{
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.arrow.rotated {
+    transform: rotate(-90deg);
+}
+
+
+
+/* ##########   Bearbeitungs-Formular   ########## */
+.popup.hidden {
+    display: none;
+}
+
+.popup {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    background-color: whitesmoke;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 300px;
+    height: 300px;
+    position: relative;
+    font-family: "ubuntu-regular";
+    color: #2d0a6e;
+}
+
+.edit-description{
+    padding: 0.5rem;
+    font-family: "ubuntu-regular";
+    border-radius: 5px;
+    border: 1.5px solid #a783eb;
+}
+
+.edit-dueOn{
+    padding: 0.5rem;
+    font-family: "ubuntu-regular";
+    border-radius: 5px;
+    border: 1.5px solid #2d0a6e;
+}
+
+.edit-label{
+    font-size: 14px;
+}
+
+.popup-button {
+    margin: 0.5rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    font-size: 12px;
+    font-family: "ubuntu-regular";
+    border-radius: 5px;
+    background-color: #2d0a6e;
+    color: #c2c7ff;
+    transition: 0.2s ease-in-out;
+}
+
+.popup-button:hover {
+    color: whitesmoke;
+}
