@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
-    <link rel="icon" type="image/jpg" href="../assets/images/logo.png">
+    <link rel="icon" type="image/jpg" href="../assets/images/logo.png" onclick="return to_db()">
     <title>Listen</title>
 </head>
 <body>
@@ -20,10 +20,13 @@
             </div>
             <div class="navigation-wrapper-right">
                 <ul class="nav-list">
-                    <li class="nav-list-element" id="aktuelles" onclick="return toDo()">Aufgaben</li>
+                    <li class="nav-list-element" id="listen" onclick="return showLists()">Listen</li>
                 </ul>
                 <ul class="nav-list">
-                    <li class="nav-list-element" id="listen" onclick="return showLists()">Listen</li>
+                    <li class="nav-list-element" id="galerie">Kalender<a href=""></a></li>
+                </ul>
+                <ul class="nav-list">
+                    <li class="nav-list-element" id="galerie">Rezepte<a href=""></a></li>
                 </ul>
                 <ul class="nav-list">
                     <li class="nav-list-element" id="galerie">Galerie<a href=""></a></li>
@@ -31,6 +34,10 @@
                 <ul class="nav-list">
                     <li class="nav-list-element" id="profil">Profil<a href=""></a></li>
                 </ul>
+                <div class="log-out-wrapper">
+                    <button class="logout-btn" type="submit" onclick="return logOut()"><img src="../assets/images/logout.png" alt="LogOut"></button>
+                    <div class="log-out-timer" id="logout-timer">Logout in 60 Minuten</div>
+                </div>
             </div>
         </div>
     </nav>
@@ -38,13 +45,11 @@
         <div class="content-wrapper-sitebar">
             <section class="menu">
                 <ul class="sidebar-menu-left">
-                    <li class="sidebar-list-element" id="toggle-lists-btn">
-                        <span id="arrow-icon" class="arrow">&#9662;</span>
-                        <span>Meine Listen</span> 
-                        <ul class="sidebar-list-element-child hidden" id="tasklist-container"></ul>
-                    </li>
-                    <li class="sidebar-list-element" id="new-list">+ Liste erstellen</li>
-                    <li class="sidebar-list-element" id="add-task-btn">+ Aufgabe erstellen</li>
+                    <a href="../dashboard/dashboard.html" class="back-db">&LeftArrowBar; zum Dashboard</zur></a>
+                    <li class="sidebar-list-element" id="new-list">&#128203;Liste erstellen</li>
+                    <li class="sidebar-list-element" id="edit-list-btn">&#9998;Liste bearbeiten</li>
+                    <li class="sidebar-list-element" id="delete-list-btn"> &#128465; Liste löschen</li>
+                    <li class="sidebar-list-element" id="add-task-btn">&#10133;Aufgabe erstellen</li>
                 </ul>
             </section>
         </div>
@@ -54,24 +59,34 @@
                     <h2 id="list-title"class="teaser-secondary">Liste</h2>
                 </div>
                 <div class="main-body">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th class="check-col"><input type="checkbox" id="select-all"></th>
-                                <th class="col_1">Beschreibung</th>
-                                <th class="col_2">Status</th>
-                                <th class="col_3">Fällig am</th>
-                                <th class="col_4">Aktion</th>
-                            </tr>
-                        </thead>
-                        <tbody id="table-body">
-    
-                        </tbody>
-                    </table>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th class="check-col"><input type="checkbox" id="select-all"></th>
+                                    <th class="col_1">Beschreibung</th>
+                                    <th class="col_2">Status</th>
+                                    <th class="col_3">Fällig am</th>
+                                    <th class="col_4">Aktion</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table-body">
+        
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </section>
         </div>
         <div class="content-wrapper-sitebar">
+            <section class="menu">
+                <ul class="sidebar-menu-right">
+                    <li class="sidebar-list-element-right" id="toggle-lists-btn">
+                        <span id="arrow-icon" class="arrow">&#9662;</span>
+                        <span>Meine Listen</span> 
+                    </li>
+                    <ul class="sidebar-list-element-child hidden" id="tasklist-container"></ul>
+            </section>
         </div>
     </div>
     <div id="list-popup" class="hidden popup">
@@ -81,6 +96,17 @@
             <input type="text" id="list-name" class="edit-description" />
             <div class="popup-buttons">
                 <button id="save-list-btn" class="popup-button">Speichern</button>
+                <button id="cancel-new-list-btn" class="popup-button">Abbrechen</button>
+            </div>
+        </div>
+    </div>
+    <div id="edit-list-popup" class="hidden popup">
+        <div class="popup-content">
+            <h3>Liste bearbeiten</h3>
+            <label class="edit-label" for="list-name">Name der Liste:</label>
+            <input type="text" id="updated-list-name" class="edit-description" />
+            <div class="popup-buttons">
+                <button id="save-edit-list-btn" class="popup-button">Speichern</button>
                 <button id="cancel-list-btn" class="popup-button">Abbrechen</button>
             </div>
         </div>
@@ -115,8 +141,7 @@
             </div>
         </div>
     </div>
-    <script src="toDo.js" defer></script>
     <script src="tasklist.js" defer></script>
-    <script src="../dashboard/dashboard.js"></script>
+    <script src="../main.js" defer></script>
 </body>
 </html>

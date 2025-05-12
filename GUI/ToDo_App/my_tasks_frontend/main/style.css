@@ -149,10 +149,6 @@ a {
     list-style: none;
 }
 
-.nav-list:last-child{
-    margin-right: 3rem;
-}
-
 .nav-list-element{
     margin-top: 1.5rem;
     cursor: pointer;
@@ -163,6 +159,29 @@ a {
     color: white;
 }
 
+.log-out-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.logout-btn{
+    padding: 0.1rem;
+    width: 30px;
+    height: 30px;
+}
+
+.log-out-timer{
+    font-family: "ubuntu-regular";
+    font-size: 12px;
+    color: #c2c7ff;
+    margin-top: 0.5rem;
+}
+
+.log-out-timer:hover{
+    color: whitesmoke;
+}
 
 /* ##########   Suchleiste   ########## */ 
 nav form.search-form{
@@ -196,11 +215,23 @@ nav button {
     background-color: whitesmoke;
 } 
 
+.back-db{
+    font-family: "ubuntu-regular";
+    font-size: 14px;
+    font-weight: 600;
+    color: #2d0a6e;
+    transition: 0.2s ease-in-out;
+}
+
+.back-db:hover{
+    color: #c2c7ff;
+}
+
 .content-wrapper-sitebar{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 1rem 1rem 0rem 1rem;
+    margin: 0rem 1rem 0rem 1rem;
     width: 250px;
     height: 85vh;
 }
@@ -211,6 +242,12 @@ nav button {
     flex-direction: column;
     width: 225px;
     height: 585px;
+}
+
+.sidebar-menu-right{
+    background-color: white;
+    border-radius: 8px;
+    width: 225px;
 }
 
 .content-wrapper-main{
@@ -251,21 +288,39 @@ nav button {
     height: 73vh;
 }
 
-
-
 /* ##########   Tabellen   ########## */
-thead{
+.table-wrapper{
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+table{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+thead th{
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    text-align: center;
+    padding: 0.5rem;
     font-family: "ubuntu-regular";
     background-color: #2d0a6e;
     color: #c2c7ff;
     font-size: 20px;
 }
 
-th{
-    font-family: "ubuntu-regular";
+tbody td{
     text-align: center;
-    font-size: 18px;
-    line-height: 30px;
+    padding: 0.4rem;
+    font-size: 14px;
+    font-family: "ubuntu-regular";
+    color: #2d0a6e;
+}
+
+th, td{
+    min-width: 150px;
 }
 
 .check-col{
@@ -285,7 +340,7 @@ th{
 }
 
 .col_4{
-    width: 15rem;
+    width: 20rem;
 }
 
 td{
@@ -294,7 +349,13 @@ td{
     font-weight: 500;
     text-align: center;
     vertical-align: middle;
+    padding: 0.4rem;
+    line-height: 1.2;
     color: #2d0a6e;
+}
+
+td:last-child{
+    padding: 0%;
 }
 
 tr.done td{
@@ -313,7 +374,6 @@ tr.done td{
     transition: 0.2s ease-in-out;
 }
 
-
 .delete-btn{
     background-color: #c2c7ff;
     color: #c2c7ff;
@@ -325,7 +385,6 @@ tr.done td{
     transition: 0.2s ease-in-out;
 }
 
-
 .edit-icon{
     width: 20px;
     height: 18px;
@@ -334,10 +393,6 @@ tr.done td{
 .delete-icon{
     width: 20px;
     height: 18px;
-}
-
-.col_1_list {
-    width: 60rem;
 }
 
 
@@ -349,39 +404,57 @@ ul li{
 .sidebar-list-element{
     font-family: "ubuntu-regular";
     color: #2d0a6e;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 800;
     letter-spacing: 2px;
     list-style: none;
     transition: 0.2s ease-in-out;
     cursor: pointer;
-}
-
-.sidebar-list-element:first-child {
-    margin-left: -0.75rem;
-    font-size: 16px;
+    margin-top: 2rem;
 }
 
 .sidebar-list-element:hover{
     color: #c2c7ff;
 }
 
+.sidebar-list-element:first-child{
+    margin-top: 3rem;
+}
+
+.sidebar-list-element:last-child{
+    margin-top: 3rem;
+    font-size: 15px;
+}
+
+.sidebar-list-element-right{
+    font-family: "ubuntu-regular";
+    margin-top: 1.5rem;
+    margin-left: 1rem;
+    color: #2d0a6e;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    list-style: none;
+    transition: 0.1s ease-in-out;
+    cursor: pointer;
+}
+
 .sidebar-list-element-child{
     font-family: "ubuntu-regular";
     letter-spacing: -0.4px;
     color: #2d0a6e;
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 500;
     list-style-type: disc;
-    margin-left: 1rem;
+    margin-left: 2rem;
     margin-top: 1rem;
     cursor: pointer;
     transition: 0.3s ease-in-out;
 }
 
 .sidebar-list-element-child:hover{
-    color: #c2c7ff;
-    font-size: 12.2px;
+    font-size: 13.2px;
+    font-weight: 800;
 }
 
 

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
-    <link rel="icon" type="image/jpg" href="../assets/images/logo.png">
+    <link rel="icon" type="image/jpg" href="../assets/images/logo.png" onclick="return to_db()">
     <title>Dashboard</title>
 </head>
 <body>
@@ -15,15 +15,18 @@
             <h1 class="teaser-main">MyTasks</h1>
             <form action="/search" method="get" class="search-form">
                 <input type="text" name="q" placeholder="Suchbegriff eingeben">
-                <button type="submit"><img src="../assets/images/lupe_nav.png" alt=""></button>
+                <button type="submit"><img src="../assets/images/lupe_nav.png" alt="Suche"></button>
             </form>
         </div>
         <div class="navigation-wrapper-right">
             <ul class="nav-list">
-                <li class="nav-list-element" id="aktuelles" onclick="return toDo()">Aufgaben</li>
+                <li class="nav-list-element" id="listen" onclick="return show_lists()">Listen</li>
             </ul>
             <ul class="nav-list">
-                <li class="nav-list-element" id="listen">Listen<a href=""></a></li>
+                <li class="nav-list-element" id="galerie">Kalender<a href=""></a></li>
+            </ul>
+            <ul class="nav-list">
+                <li class="nav-list-element" id="galerie">Rezepte<a href=""></a></li>
             </ul>
             <ul class="nav-list">
                 <li class="nav-list-element" id="galerie">Galerie<a href=""></a></li>
@@ -31,6 +34,10 @@
             <ul class="nav-list">
                 <li class="nav-list-element" id="profil">Profil<a href=""></a></li>
             </ul>
+            <div class="log-out-wrapper">
+                <button class="logout-btn" type="submit" onclick="return logOut()"><img src="../assets/images/logout.png" alt="LogOut"></button>
+                <div class="log-out-timer" id="logout-timer">Logout in 60 Minuten</div>
+            </div>
         </div>
     </div>
 </nav>
@@ -54,6 +61,6 @@
     </div>
 </div>
 
-<script src="./dashboard.js"></script>
+<script src="../main.js"></script>
 </body>
 </html>
