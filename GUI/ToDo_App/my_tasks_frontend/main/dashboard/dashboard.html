@@ -20,7 +20,7 @@
         </div>
         <div class="navigation-wrapper-right">
             <ul class="nav-list">
-                <li class="nav-list-element" id="listen" onclick="return show_lists()">Listen</li>
+                <li class="nav-list-element" id="listen" onclick="return show_lists()">myLists</li>
             </ul>
             <ul class="nav-list">
                 <li class="nav-list-element" id="galerie">Kalender<a href=""></a></li>
@@ -34,9 +34,9 @@
             <ul class="nav-list">
                 <li class="nav-list-element" id="profil">Profil<a href=""></a></li>
             </ul>
-            <div class="log-out-wrapper">
-                <button class="logout-btn" type="submit" onclick="return logOut()"><img src="../assets/images/logout.png" alt="LogOut"></button>
-                <div class="log-out-timer" id="logout-timer">Logout in 60 Minuten</div>
+            <div class="logout-wrapper"id="logout-wrapper">
+                <button class="logout-btn" id ="logout-btn" type="button"><img src="../assets/images/logout.png" alt="LogOut"></button>
+                <div class="logout-timer" id="logout-timer"></div>
             </div>
         </div>
     </div>

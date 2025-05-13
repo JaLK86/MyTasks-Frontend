@@ -21,35 +21,46 @@ function logIn() {
 }
 
 // Automatischer LogOut
-let logoutTime = parseInt(localStorage.getItem("logoutTime")) || 60 * 60;
+let logoutCountdown;
+let countdownValue = 600;
 
-const logoutTimerDisplay = document.getElementById("logout-timer");
+function startLogoutCountdown() {
+    logoutCountdown = setInterval(() => {
+        countdownValue--;
+        const timerElement = document.getElementById("logout-timer");
+        if (timerElement) {
+            timerElement.textContent = formatTime(countdownValue);
+        }
 
-if (logoutTimerDisplay) {
-    // Countdown starten
-    const timerIntervall = setInterval(() => {
-        const minutes = Math.floor(logoutTime / 60);
-        const seconds = logoutTime % 60;
-
-        logoutTimerDisplay.textContent = `Noch ${minutes}:${seconds.toString().padStart(2, "0")} Minuten`;
-
-        logoutTime--;
-        localStorage.setItem("logoutTime", logoutTime);
-
-        if (logoutTime <0) {
-            clearInterval(timerIntervall);
-            localStorage.removeItem("ACCESSKEY");
-            localStorage.removeItem("logoutTime");
-            window.location.href = "/index.html";
+        if (countdownValue <= 0) {
+            clearInterval(logoutCountdown);
+            performLogout();
         }
     }, 1000);
 }
-    
-// Manuelles Logout
-function logOut() {
-    localStorage.removeItem("ACCESSKEY");
+
+function resetLogoutTimer() {
+    clearInterval(logoutCountdown);
+    countdownValue = 600;
+
+    const timerElement = document.getElementById("logout-timer");
+    if (timerElement) {
+        timerElement.textContent = formatTime(countdownValue);
+        timerElement.style.display = "none";
+    }
+}
+
+function performLogout() {
+    resetLogoutTimer();
+    localStorage.removeItem("access");
     localStorage.removeItem("logoutTime");
-    window.location.href = '../index.html';
+    window.location.href = "../index.html";
+}
+
+function formatTime(seconds) {
+    const m = Math.floor(seconds / 60).toString().padStart(2, "0");
+    const s = (seconds % 60).toString().padStart(2, "0");
+    return `Logout in ${m}:${s}`;
 }
 
 function registry() {
@@ -60,8 +71,30 @@ function show_lists() {
     window.location.href = "../toDo/tasklist.html";
 };
 
-
-
 function to_db() {
     window.location.href = './dashboard/dashboard.html';
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    const logoutBtn = document.getElementById("logout-btn");
+    const logoutTimer = document.getElementById("logout-timer");
+    const logoutWrapper = document.getElementById("logout-wrapper");
+
+    if (logoutBtn) {
+        logoutBtn.addEventListener("click", () => {
+            performLogout();
+        });
+    }
+
+    if (logoutWrapper && logoutTimer) {
+        logoutWrapper.addEventListener("mouseover", () => {
+            logoutTimer.style.display ="inline";
+        });
+
+        logoutWrapper.addEventListener("mouseout", () => {
+            logoutTimer.style.display = "none";
+        });
+    }
+
+    startLogoutCountdown();
+});
