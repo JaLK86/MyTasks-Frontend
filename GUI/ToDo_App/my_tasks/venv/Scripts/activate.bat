@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=C:\Users\Umschueler\GUI\ToDo_App\my_tasks\venv
+set VIRTUAL_ENV=C:\GUI\myTasks\MyTasks-Frontend\GUI\ToDo_App\my_tasks\venv
 
 if not defined PROMPT set PROMPT=$P$G
 
